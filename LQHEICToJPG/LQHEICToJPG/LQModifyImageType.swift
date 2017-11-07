@@ -9,9 +9,29 @@
 import UIKit
 import Photos
 
-extension UIDevice {
+extension UIImage {
     
+    class func imageWithHeic(_ data: Data) -> UIImage? {
+        
+        let ciImage = CIImage(data: data)
+        guard let image = ciImage else {
+            return nil
+        }
+        
+        return UIImage(ciImage: image)
+    }
+    
+    class func imageWithHeic(_ url: URL) -> UIImage? {
+        
+        let ciImage = CIImage(contentsOf: url)
+        guard let image = ciImage else {
+            return nil
+        }
+        
+        return UIImage(ciImage: image)
+    }
 }
+
 extension PHAsset {
     var isHEIC: Bool {
         
