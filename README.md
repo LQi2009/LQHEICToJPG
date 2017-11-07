@@ -1,0 +1,2 @@
+# LQHEICToJPG
+HEIC 与 JPG/PNG 相互转换
